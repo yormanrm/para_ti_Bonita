@@ -24,6 +24,7 @@ body {
 
 .flower {
 	position: relative;
+	margin: 1rem;
 }
 
 .flower__glass {
@@ -351,23 +352,52 @@ body {
 }
 
 .frase {
-	font-family: "Bitter", serif;
-	color: white;
-	position: absolute;
-	top: 0;
-	opacity: 0;
-	animation: aparecer 2s linear forwards;
+    font-family: "Bitter", serif;
+    color: white;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    animation: aparecer 2s linear forwards;
     margin: 1rem;
     font-size: 15px;
 }
 
-.frase h1 {
+.frase .frase-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.frase .frase-button button {
+    font-size: 2rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background: none;
+    border: 3px solid #9c9f05;
+    color: #ffffe6;
+    cursor: pointer;
+}
+
+/* Inicialmente, el texto está oculto y tiene opacidad 0 */
+.frase .frase-texto {
+    opacity: 0;
+    transition: opacity 1s ease; /* Efecto de transición para la opacidad */
+    visibility: hidden; /* Para evitar que el espacio del texto afecte el diseño cuando esté oculto */
+}
+
+.frase .frase-texto.show {
+    opacity: 1;
+    visibility: visible; /* Hace el texto visible */
+}
+
+.frase .frase-texto h1 {
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.frase h2 {
+.frase .frase-texto h2 {
     text-align: justify;
+    margin-bottom: 1rem;
 }
 
 @keyframes aparecer {
